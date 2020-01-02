@@ -1,15 +1,17 @@
 resource "aws_instance" "default" {
-  ami           = "ami-4af5022c"
-  vpc_security_group_ids = [aws_security_group.default.id]  
+  ami = "ami-0c3fd0f5d33134a76"
   instance_type = var.instance_type
+  vpc_security_group_ids = [aws_security_group.default.id]
+  subnet_id = var.subnet_id
   tags = {
-    Name = var.tags_name
+    Name = var.ec2_tags_name
   }
 
   user_data = file("./modules/ec2/user_data.sh")
 }
 
-output "public_dns" {
-    value = aws_instance.default.public_dns
+resource "aws_eip" "default" {
+  instance = aws_instance.default.id
+  vpc      = true
 }
 

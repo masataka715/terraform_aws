@@ -1,3 +1,7 @@
 variable "instance_type" {}
 
-variable "tags_name" {}
+variable "ec2_tags_name" {}
+
+variable "vpc_id" {}
+
+variable "subnet_id" {}

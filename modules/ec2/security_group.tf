@@ -1,6 +1,6 @@
 resource "aws_security_group" "default" {
-  name = "ec2"
-
+  name = "aaaa"
+  vpc_id = var.vpc_id
   ingress {
       from_port = 80
       to_port = 80
@@ -13,5 +13,9 @@ resource "aws_security_group" "default" {
       to_port = 0
       protocol = "-1"
       cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  tags = {
+    Name = "terraform"
   }
 }
