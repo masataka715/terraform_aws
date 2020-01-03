@@ -1,4 +1,8 @@
-variable "security_group_name" {
+variable "web_sq_name" {
+  type = string
+}
+
+variable "rds_sg_name" {
   type = string
 }
 
