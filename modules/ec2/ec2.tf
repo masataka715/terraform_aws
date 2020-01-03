@@ -1,8 +1,8 @@
 resource "aws_instance" "default" {
-  ami = "ami-0c3fd0f5d33134a76"
-  instance_type = var.instance_type
-  vpc_security_group_ids = [aws_security_group.default.id]
-  subnet_id = var.subnet_id
+  ami                    = "ami-0c3fd0f5d33134a76"
+  instance_type          = var.instance_type
+  vpc_security_group_ids = [var.vpc_security_group_id]
+  subnet_id              = var.subnet_id
   tags = {
     Name = var.ec2_tags_name
   }

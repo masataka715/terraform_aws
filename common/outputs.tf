@@ -1,9 +1,9 @@
 output "vpc_id" {
-    value = aws_vpc.main.id
+  value = aws_vpc.main.id
 }
 
 output "public_web1_subent_id" {
-    value = aws_subnet.public_web1.id
+  value = aws_subnet.public_web1.id
 }
 
 # output "public_web2_subent_id" {
@@ -17,3 +17,7 @@ output "public_web1_subent_id" {
 # output "private_db2_subent_id" {
 #     value = aws_subnet.private_db2.id
 # }
+
+output "security_group_id" {
+    value = aws_security_group.default.id
+}
